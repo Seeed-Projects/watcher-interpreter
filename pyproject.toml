@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=57.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watcher-interpreter"
+version = "0.0.1"
+authors = [{ name = "luozhixin", email = "zhixin.luo@seeed.cc" }]
+description = "Running interpreter with watcher in command"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+keywords = [
+  "watcher",
+  "seeed",
+  "llm",
+]
+
+[project.scripts]
+watcher-interpreter = "watcher.main:run_script"
+
+[project.urls]
+Homepage = "https://github.com/Seeed-Projects/watcher-interpreter"
+Issues = "https://github.com/Seeed-Projects/watcher-interpreter/issues"
+
+# Tools settings -------------------------------------------------------------------------------------------------------
+
+[tool.setuptools.packages.find]
+namespaces = true
+where = ["."]
+
+[tool.setuptools.package-data]
+"reComputer.scripts" = ["**/*"]
